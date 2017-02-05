@@ -240,6 +240,64 @@
 		</form>
 	</div>
 
+	<div id="cpAgregarAbogado">
+		<form class="form-horizontal" id="frmAgregarAbogado" name="frmAgregarAbogado">
+				<div class="form-group">
+					<label class="col-md-4 control-label" >D.N.I</label>
+					<div class="col-md-4">
+						<input id="textDniAbogado" name="txtDniAbogado" type="text" placeholder="DNI" class="form-control input-md">
+						<span class="help-block">Ejemplo: 12345678L</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" >Nombre</label>
+					<div class="col-md-4">
+						<input id="txtNombreAbogado" name="txtNombreAbogado" type="text" placeholder="Nombre" class="form-control input-md">
+						<span class="help-block">Ejemplo: Francisco</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Sueldo</label>
+					<div class="col-md-4">
+						<input id="frmSueldo" name="frmSueldo" type="text" placeholder="Sueldo" class="form-control input-md">
+						<span class="help-block">Ejemplo: 900,00</span>
+					</div>
+
+
+				</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-8">
+						<button type="button" id="btnAñadirAbogado" name="btnAñadirAbogado" class="btn btn-warning">Agregar</button>
+						<button type="button" id="btnCancelarAbogado" name="btnCancelarAbogado" class="btn btn-warning">Cancelar</button>
+					</div>
+				</div>
+		</form>
+	</div>
+	<div id="cpBajaAbogado">
+		<form class="form-horizontal" id="frmAboBaja" name="frmAboBaja">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Abogado</label>
+					<div class="col-md-4">
+						<select id="sltAbogadoModif" name="sltAbogado" class="form-control">
+						</select>
+					</div>
+				</div>
+
+				<!-- Button (Double) -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="darBajaAbogado"></label>
+					<div class="col-md-8">
+						<button type="button" id="btnBajaAbo" name="btnBajaAbo" class="btn btn-warning">Baja</button>
+						<button type="button" id="btnCancelarBajaAbo" name="btnCancelarBajaAbo" class="btn btn-warning">Cancelar</button>
+					</div>
+				</div>
+		</form>
+
+	</div>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -306,6 +364,7 @@
 	$("#btnCanModCliente").click(cerrarDialogo());
 	$("#btnModificarCliente").click(abrirModificarCliente());
 
+
 	function abrirModificarCliente() {
 		oDlgAltaCliente = $( "#cpClienteModificado" ).dialog({
 			autoOpen: false,
@@ -319,13 +378,36 @@
 		$("#btnCancelarCliMod").click(cerrarDialogo());
 	}
 
+	oDlgAgregarAbogado = $( "#cpAgregarAbogado").dialog({
+		autoOpen: false,
+		height: 250,
+		width: 500,
+		modal: false,
+
+		close: resetearCampos()
+	});
+	$("#mnuNuevoAbogado").click(function(){ oDlgAgregarAbogado.dialog("open"); });
+	$("#btnCancelarAbogado").click(cerrarDialogo());
+
+	oDlgBajaAbogado = $( "#cpBajaAbogado").dialog({
+		autoOpen: false,
+		height: 250,
+		width: 500,
+		modal: false,
+
+		close: resetearCampos()
+	});
+	$("#mnuBajaAbogado").click(function(){oDlgBajaAbogado.dialog("open"); });
+	//$("#btnCancelarBajaAbo").click(cerrarDialogo());
+
 	function cerrarDialogo() {
 
 		resetearCampos();
 		oDlgAltaCliente.dialog("close");
 		oDlgBajaCliente.dialog("close");
 		oDlgModificarCliente.dialog("close");
-
+		//oDlgAgregarAbogado.dialog("close")
+		//oDlgBajaAbogado.dialog("close");
 	}
 	function resetearCampos() {
 
@@ -333,6 +415,9 @@
 		document.frmAñadirCliente.reset();
 		document.frmClienteM.reset();
 		document.frmClienteModificar.reset();
+		document.frmAgregarAbogado.reset();
+		document.frmAboBaja.reset();
+
 	}
 
 
