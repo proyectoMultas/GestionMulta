@@ -84,7 +84,7 @@
 		</div>
 	</nav>
 
-	<div id="cpAñadirCliente">
+	<div id="cpAñadirCliente" title="Añadir Cliente">
 
 		<form class="form-horizontal" id="frmAñadirCliente" name="frmAñadirCliente">
 
@@ -154,7 +154,7 @@
 
 	</div>
 
-	<div id="cpBajaCliente">
+	<div id="cpBajaCliente" title="Baja Cliente">
 		<form class="form-horizontal" id="frmBajaCliente" name="frmBajaCliente">
 				<div class="form-group">
 					<label class="col-md-4 control-label">Cliente</label>
@@ -173,7 +173,7 @@
 
 	</div>
 
-	<div id="cpModificarCliente">
+	<div id="cpModificarCliente" title="Modificar Cliente">
 		<form class="form-horizontal" id="frmClienteModificar" name="frmClienteModificar">
 
 				<div class="form-group">
@@ -193,7 +193,7 @@
 		</form>
 	</div>
 
-	<div id="cpClienteModificado">
+	<div id="cpClienteModificado" title="ModificarCliente">
 		<form class="form-horizontal" id="frmClienteMod" name="frmClienteMod">
 
 				<div class="form-group">
@@ -240,7 +240,7 @@
 		</form>
 	</div>
 
-	<div id="cpAgregarAbogado">
+	<div id="cpAgregarAbogado" title="Agregar Abogado">
 		<form class="form-horizontal" id="frmAgregarAbogado" name="frmAgregarAbogado">
 				<div class="form-group">
 					<label class="col-md-4 control-label" >D.N.I</label>
@@ -276,7 +276,7 @@
 				</div>
 		</form>
 	</div>
-	<div id="cpBajaAbogado">
+	<div id="cpBajaAbogado" title="Baja Abogado">
 		<form class="form-horizontal" id="frmAboBaja" name="frmAboBaja">
 				<div class="form-group">
 					<label class="col-md-4 control-label">Abogado</label>
@@ -288,7 +288,7 @@
 
 				<!-- Button (Double) -->
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="darBajaAbogado"></label>
+					<label class="col-md-4 control-label"></label>
 					<div class="col-md-8">
 						<button type="button" id="btnBajaAbo" name="btnBajaAbo" class="btn btn-warning">Baja</button>
 						<button type="button" id="btnCancelarBajaAbo" name="btnCancelarBajaAbo" class="btn btn-warning">Cancelar</button>
@@ -361,24 +361,28 @@
 	});
 
 	$("#mnuModificaCliente").click(function(){ oDlgModificarCliente.dialog("open"); });
-	$("#btnCanModCliente").click(cerrarDialogo());
-	$("#btnModificarCliente").click(abrirModificarCliente());
+	$("#btnCanModCliente").click(cerrarDialogo);
+
+	$("#btnModificarCliente").click(abrirModificarCliente);
+
+	oDlgClienteMod = $("#cpClienteModificado").dialog({
+
+		autoOpen: false,
+		height: 700,
+		width: 700,
+		modal: false,
+		close: resetearCampos()
+
+	});
+	$("#btnCancelarCliMod").click(cerrarDialogo);
+
 
 
 	function abrirModificarCliente() {
-		oDlgAltaCliente = $( "#cpClienteModificado" ).dialog({
-			autoOpen: false,
-			height: 700,
-			width: 700,
-			modal: false,
-
-			close: resetearCampos()
-		});
-
-		$("#btnCancelarCliMod").click(cerrarDialogo());
+	oDlgClienteMod.dialog("open");
 	}
 
-	oDlgAgregarAbogado = $( "#cpAgregarAbogado").dialog({
+	/*oDlgAgregarAbogado = $( "#cpAgregarAbogado").dialog({
 		autoOpen: false,
 		height: 250,
 		width: 500,
@@ -399,7 +403,7 @@
 	});
 	$("#mnuBajaAbogado").click(function(){oDlgBajaAbogado.dialog("open"); });
 	//$("#btnCancelarBajaAbo").click(cerrarDialogo());
-
+*/
 	function cerrarDialogo() {
 
 		resetearCampos();
