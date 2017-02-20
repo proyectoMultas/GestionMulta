@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css" />
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="jquery-ui.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="cpMulta" title="Agregar Multa">
+    <form class="form-horizontal" id="frmAgregarMulta" name="frmAgregarMulta">
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" >Nombre</label>
+                <div class="col-md-4">
+                    <input id="nombreMulta" name="nombreMulta" type="text" placeholder="" class="form-control input-md">
+                    <span class="help-block">Ejemplo: 000-aaa-000</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" >Importe</label>
+                <div class="col-md-4">
+                    <input id="importeMulta" name="importeMulta" type="text" placeholder="" class="form-control input-md">
+                    <span class="help-block">Ejemplo: 900,00</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha</label>
+                <div class="col-md-4">
+                    <input id="fechaMulta" name="fechaMulta" type="text" placeholder="" class="form-control input-md">
+                    <span class="help-block">Ejemplo: 01/01/2017</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Descripcion</label>
+                <div class="col-md-4">
+                    <input id="descripcionMulta" name="descripcionMulta" type="text" placeholder="" class="form-control input-md">
+                    <span class="help-block">Longitud maxima 40 carácteres</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+            <label class="col-md-4 control-label">Algaciones</label>
+                <div class="col-md-4">
+                    <input id="alegacionesMulta" name="alegacionesMulta" type="text" placeholder="" class="form-control input-md">
+                    <span class="help-block">Longitud maxima 40 carácteres</span>
+                </div>
+            </div>
+
+        <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+
+                    <button type="button" id="btnAñadirMulta" name="btnAñadirMulta" class="btn btn-info">Agregar</button>
+
+                </div>
+            </div>
+
+    </form>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+
+    oDlgMultaCliente = $( "#cpMulta" ).dialog({
+        autoOpen: false,
+        height: 700,
+        width: 700,
+        show:{
+            effect:"drop",
+            duration:"2000"
+        },
+        hide:{
+            effect:"drop",
+            duration:"2000"
+        },
+        modal: false,
+
+        close: document.frmAgregarMulta.reset()
+    });
+
+</script>
+</body>
+</html>
