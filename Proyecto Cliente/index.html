@@ -11,8 +11,8 @@
 
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css" />
 	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
-	<link rel="stylesheet" href="estilo.css">
-	<link href="jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="estilo/estilo.css">
+	<link href="estilo/jquery-ui.css" rel="stylesheet">
 
 </head>
 <body>
@@ -404,6 +404,7 @@
 		</form>
 
 	</div>
+	<div id="formularios"></div>
 
 
 </div>
@@ -418,7 +419,7 @@
 
 	oDlgAltaCliente = $( "#cpAñadirCliente" ).dialog({
 		autoOpen: false,
-		height: 700,
+		height: 600,
 		width: 700,
 		show:{
 			effect:"blind",
@@ -580,12 +581,16 @@
 		close: resetearCampos()
 	});
 	$("#mnuNuevaReclamacion").click(function(){oDlgNuevaRelcamacion.dialog("open"); });
-	
-	$("#btnAñadirMulta").click(abrirDialogoMulta);
-	
-	function abrirDialogoMulta() {
-		
-	}
+
+	$('#btnNuevaMulta').click(function(){
+	alert("entra");
+		$( "#formularios" ).load("html/multa.js");
+	});
+
+
+
+
+
 
 	function resetearCampos() {
 
