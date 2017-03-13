@@ -11,8 +11,8 @@
 
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css" />
 	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
-	<link rel="stylesheet" href="estilo.css">
-	<link href="jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="estilo/estilo.css">
+	<link href="estilo/jquery-ui.css" rel="stylesheet">
 
 </head>
 <body>
@@ -50,7 +50,6 @@
 					<ul class="dropdown-menu">
 
 						<li id="mnuNuevoCliente"><a>Nuevo Cliente</a></li>
-						<li id="mnuBajaCliente"><a>Baja Cliente</a></li>
 						<li id="mnuModificaCliente"><a>Modificar Cliente</a></li>
 						<li id="mnuHistorialCliente"><a>Historial</a></li>
 
@@ -63,7 +62,6 @@
 					<ul class="dropdown-menu">
 
 						<li id="mnuNuevoAbogado"><a>Nuevo Abogado</a></li>
-						<li id="mnuBajaAbogado"><a>Baja Abogado</a></li>
 						<li id="mnuModificarSueldo"><a>Modificar Sueldo</a></li>
 						<li id="mnuHistorialAbogado"><a>Historial</a></li>
 
@@ -79,48 +77,48 @@
 		<form class="form-horizontal" id="frmAñadirCliente" name="frmAñadirCliente">
 
 			<div class="form-group">
-					<label class="col-md-4 control-label">D.N.I</label>
-					<div class="col-md-4">
-						<input id="txtCliDni" name="txtCliDni" type="text" placeholder="DNI" class="form-control input-md">
-						<span class="help-block">Ejemplo: 12345678k</span>
-					</div>
+				<label class="col-md-4 control-label">D.N.I</label>
+				<div class="col-md-4">
+					<input id="txtCliDni" name="txtCliDni" type="text" placeholder="DNI" class="form-control input-md">
+					<span class="help-block">Ejemplo: 12345678k</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label" >Nombre</label>
-					<div class="col-md-4">
-						<input id="txtCliNom" name="txtCliNom" type="text" placeholder="Nombre" class="form-control input-md">
-						<span class="help-block">Ejemplo: Adrian</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" >Nombre</label>
+				<div class="col-md-4">
+					<input id="txtCliNom" name="txtCliNom" type="text" placeholder="Nombre" class="form-control input-md">
+					<span class="help-block">Ejemplo: Adrian</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Telefono</label>
-					<div class="col-md-4">
-						<input id="txtCliTlf" name="txtCliTlf" type="text" placeholder="Telefono" class="form-control input-md">
-						<span class="help-block">Ejemplo: (9/7/6)52346100</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Telefono</label>
+				<div class="col-md-4">
+					<input id="txtCliTlf" name="txtCliTlf" type="text" placeholder="Telefono" class="form-control input-md">
+					<span class="help-block">Ejemplo: (9/7/6)52346100</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label" >Email</label>
-					<div class="col-md-4">
-						<input id="txtCliEmail" name="txtCliEmail" type="text" placeholder="Email" class="form-control input-md">
-						<span class="help-block">Ejemplo: aaa@aaa.com</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" >Email</label>
+				<div class="col-md-4">
+					<input id="txtCliEmail" name="txtCliEmail" type="text" placeholder="Email" class="form-control input-md">
+					<span class="help-block">Ejemplo: aaa@aaa.com</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label"></label>
-					<div class="col-md-4">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" name="" id="chbClienteMiembro" value="miembro">
-								Miembro
-							</label>
-						</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-4">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="chbClienteMiembro" id="chbClienteMiembro" value="miembro">
+							Miembro
+						</label>
 					</div>
 				</div>
+			</div>
 		</form>
 
 		<form class="form-horizontal" id="frmClienteM" name="frmClienteM">
@@ -140,173 +138,108 @@
 			</div>
 
 		</div>
-
+	<div id="sMensajeAltaCliente"></div>
 	</div>
 
-	<div id="cpBajaCliente" title="Baja Cliente">
-		<form class="form-horizontal" id="frmBajaCliente" name="frmBajaCliente">
-				<div class="form-group">
-					<label class="col-md-4 control-label">Cliente</label>
-					<div class="col-md-4">
-						<select id="sltClienteBaja" name="sltClienteBaja" class="form-control"> </select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="btnBajaCliente"></label>
-					<div class="col-md-8">
-						<button type="button" id="btnBajaCliente" name="btnBajaCliente" class="btn btn-info">Baja</button>
-					</div>
-				</div>
-		</form>
 
-	</div>
-
-	<div id="cpModificarCliente" title="Modificar Cliente">
-		<form class="form-horizontal" id="frmClienteModificar" name="frmClienteModificar">
-
-				<div class="form-group">
-					<label class="col-md-4 control-label">Cliente</label>
-					<div class="col-md-4">
-						<select id="sltClienteModificar" name="sltClienteModificar" class="form-control"></select>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="col-md-4 control-label" ></label>
-					<div class="col-md-8">
-						<button type="button" id="btnModificarCliente" name="btnModificarCliente" class="btn btn-info">Modificar</button>
-					</div>
-				</div>
-		</form>
-	</div>
 
 	<div id="cpClienteModificado" title="Modificar Cliente">
 		<form class="form-horizontal" id="frmClienteMod" name="frmClienteMod">
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">D.N.I</label>
-					<div class="col-md-4">
-						<input id="txtDniCliMod" name="txtCliMod" type="text" placeholder="D.N.I" class="form-control input-md">
-						<span class="help-block">Ejemplo: 30251483L</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Cliente</label>
+				<div class="col-md-4">
+					<select id="sltClienteModificar" name="sltClienteModificar" class="form-control"></select>
 				</div>
+			</div>
 
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Nombre</label>
-					<div class="col-md-4">
-						<input id="txtNomCliMod" name="txtNomCliMod" type="text" placeholder="Nombre" class="form-control input-md">
-						<span class="help-block">Ejemplo: Adrian</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Telefono</label>
+				<div class="col-md-4">
+					<input id="txtTelfCliMod" name="txtTelfCliMod" type="text" placeholder="Telefono" class="form-control input-md">
+					<span class="help-block">Ejemplo: (9/7/6)52302561</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Telefono</label>
-					<div class="col-md-4">
-						<input id="txtTelfCliMod" name="txtTelfCliMod" type="text" placeholder="Telefono" class="form-control input-md">
-						<span class="help-block">Ejemplo: (9/7/6)52302561</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Email</label>
+				<div class="col-md-4">
+					<input id="txtEmailCliMod" name="txtEmailCliMod" type="text" placeholder="Email" class="form-control input-md">
+					<span class="help-block">Ejemplo: ejemplo@ejemplo.com</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Email</label>
-					<div class="col-md-4">
-						<input id="txtEmailCliMod" name="txtEmailCliMod" type="text" placeholder="Email" class="form-control input-md">
-						<span class="help-block">Ejemplo: ejemplo@ejemplo.com</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<button type="button" id="btnCliMod" name="btnCliMod" class="btn btn-info">Modificar</button>
 				</div>
-
-				<div class="form-group">
-					<label class="col-md-4 control-label"></label>
-					<div class="col-md-8">
-						<button type="button" id="btnCliMod" name="btnCliMod" class="btn btn-info">Modificar</button>
-					</div>
-				</div>
+			</div>
 
 		</form>
 	</div>
 
-	<div id="cpAgregarAbogado" title="Agregar Cliente">
+	<div id="cpAgregarAbogado" title="Agregar Abogado">
 		<form class="form-horizontal" id="frmAgregarAbogado" name="frmAgregarAbogado">
-				<div class="form-group">
-					<label class="col-md-4 control-label" >D.N.I</label>
-					<div class="col-md-4">
-						<input id="textDniAbogado" name="txtDniAbogado" type="text" placeholder="DNI" class="form-control input-md">
-						<span class="help-block">Ejemplo: 12345678L</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" >D.N.I</label>
+				<div class="col-md-4">
+					<input id="textDniAbogado" name="txtDniAbogado" type="text" placeholder="DNI" class="form-control input-md">
+					<span class="help-block">Ejemplo: 12345678L</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" >Nombre</label>
+				<div class="col-md-4">
+					<input id="txtNombreAbogado" name="txtNombreAbogado" type="text" placeholder="Nombre" class="form-control input-md">
+					<span class="help-block">Ejemplo: Francisco</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Sueldo</label>
+				<div class="col-md-4">
+					<input id="frmSueldo" name="frmSueldo" type="text" placeholder="Sueldo" class="form-control input-md">
+					<span class="help-block">Ejemplo: 900,00</span>
 				</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label" >Nombre</label>
-					<div class="col-md-4">
-						<input id="txtNombreAbogado" name="txtNombreAbogado" type="text" placeholder="Nombre" class="form-control input-md">
-						<span class="help-block">Ejemplo: Francisco</span>
-					</div>
-				</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Sueldo</label>
-					<div class="col-md-4">
-						<input id="frmSueldo" name="frmSueldo" type="text" placeholder="Sueldo" class="form-control input-md">
-						<span class="help-block">Ejemplo: 900,00</span>
-					</div>
-
-
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<button type="button" id="btnAñadirAbogado" name="btnAñadirAbogado" class="btn btn-info">Agregar</button>
 				</div>
-				<div class="form-group">
-					<label class="col-md-4 control-label"></label>
-					<div class="col-md-8">
-						<button type="button" id="btnAñadirAbogado" name="btnAñadirAbogado" class="btn btn-info">Agregar</button>
-					</div>
-				</div>
+			</div>
 		</form>
-	</div>
-
-	<div id="cpBajaAbogado" title="Baja Abogado">
-		<form class="form-horizontal" id="frmAboBaja" name="frmAboBaja">
-				<div class="form-group">
-					<label class="col-md-4 control-label">Abogado</label>
-					<div class="col-md-4">
-						<select id="sltAbogadoModif" name="sltAbogado" class="form-control">
-						</select>
-					</div>
-				</div>
-
-				<!-- Button (Double) -->
-				<div class="form-group">
-					<label class="col-md-4 control-label"></label>
-					<div class="col-md-8">
-						<button type="button" id="btnBajaAbo" name="btnBajaAbo" class="btn btn-info">Baja</button>
-					</div>
-				</div>
-		</form>
-
 	</div>
 
 	<div id="cpModificarSueldo" title="Modificar Sueldo">
 		<form class="form-horizontal" id="frmModificarSueldo" name="frmModificarSueldo">
-				<div class="form-group">
-					<label class="col-md-4 control-label">Abogado</label>
-					<div class="col-md-4">
-						<select id="sltAbogado" name="sltAbogado" class="form-control">
-						</select>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Abogado</label>
+				<div class="col-md-4">
+					<select id="sltAbogado" name="sltAbogado" class="form-control">
+					</select>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Sueldo</label>
-					<div class="col-md-4">
-						<input id="txtSueldoMod" name="txtSueldoMod" type="text" placeholder="Sueldo" class="form-control input-md">
-						<span class="help-block">Ejemplo: 900,00</span>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Sueldo</label>
+				<div class="col-md-4">
+					<input id="txtSueldoMod" name="txtSueldoMod" type="text" placeholder="Sueldo" class="form-control input-md">
+					<span class="help-block">Ejemplo: 900,00</span>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label"></label>
-					<div class="col-md-8">
-						<button type="button" id="btnAceptarModAbo" name="btnAceptarModAbo" class="btn btn-info">Modificar</button>
-					</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<button type="button" id="btnAceptarModAbo" name="btnAceptarModAbo" class="btn btn-info">Modificar</button>
 				</div>
+			</div>
 		</form>
 	</div>
 
@@ -314,104 +247,117 @@
 
 		<form class="form-horizontal" id="frmNuevaReclamacion" name="frmNuevaReclamacion">
 
-				<div class="form-group">
-					<label class="col-md-4 control-label">Nombre</label>
+			<div class="form-group">
+				<label class="col-md-4 control-label">Nombre</label>
 
-					<div class="col-md-4">
-						<input id="txtReclamacionNombre" name="txtReclamacionNombre" type="text" placeholder="Nombre" class="form-control input-md">
-						<span  class="help-block">Ejemplo: 000-AAA</span>
-					</div>
+				<div class="col-md-4">
+					<input id="txtReclamacionNombre" name="txtReclamacionNombre" type="text" placeholder="Nombre" class="form-control input-md">
+					<span  class="help-block">Ejemplo: 000-AAA</span>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+
+				<label class="col-md-4 control-label">Estado</label>
+
+				<div class="col-md-4">
+
+					<select id="sleEstadoReclamacion" name="sltEstadoReclamacion" class="form-control">
+
+						<option value="borrador">Borrador</option>
+						<option value="activa">Activa</option>
+						<option value="terminada">Terminada</option>
+						<option value="cancelada">Cancelada</option>
+
+					</select>
 
 				</div>
 
-				<div class="form-group">
+			</div>
 
-					<label class="col-md-4 control-label">Estado</label>
+			<div class="form-group">
 
-					<div class="col-md-4">
+				<label class="col-md-4 control-label">Cliente</label>
 
-						<select id="sleEstadoReclamacion" name="sltEstadoReclamacion" class="form-control">
+				<div class="col-md-4">
 
-							<option value="borrador">Borrador</option>
-							<option value="activa">Activa</option>
-							<option value="terminada">Terminada</option>
-							<option value="cancelada">Cancelada</option>
-
-						</select>
-
-					</div>
+					<select id="sltClienteReclamacion" name="sltClienteReclamacion" class="form-control"></select>
 
 				</div>
 
-				<div class="form-group">
+			</div>
 
-					<label class="col-md-4 control-label">Cliente</label>
+			<div class="form-group">
 
-					<div class="col-md-4">
+				<label class="col-md-4 control-label">Abogado</label>
 
-						<select id="sltClienteReclamacion" name="sltClienteReclamacion" class="form-control"></select>
+				<div class="col-md-4">
 
-					</div>
-
-				</div>
-
-				<div class="form-group">
-
-					<label class="col-md-4 control-label">Abogado</label>
-
-					<div class="col-md-4">
-
-						<select id="sltAbogadoReclamacion" name="sltAbogadoReclamacion" class="form-control"></select>
-
-					</div>
+					<select id="sltAbogadoReclamacion" name="sltAbogadoReclamacion" class="form-control"></select>
 
 				</div>
 
-				<div class="form-group">
+			</div>
 
-					<label class="col-md-4 control-label">Factura</label>
+			<div class="form-group">
 
-					<div class="col-md-4">
+				<label class="col-md-4 control-label">Factura</label>
 
-						<input id="txtFactura" name="txtFactura" type="text" placeholder="Factura" class="form-control input-md" readonly="readonly">
+				<div class="col-md-4">
 
-					</div>
-
-				</div>
-
-				<div class="form-group">
-
-					<label class="col-md-4 control-label">Multa</label>
-
-					<div class="col-md-4">
-
-						<input id="txtMulta" name="txtMulta" type="text" placeholder="Multa" class="form-control input-md" readonly="readonly">
-
-					</div>
+					<input id="txtFactura" name="txtFactura" type="text" placeholder="Factura" class="form-control input-md" readonly="readonly">
 
 				</div>
 
-				<div class="form-group">
-					<label class="col-md-4 control-label"></label>
-					<div class="col-md-8">
-						<button type="button" id="btnAñadirReclamacion" name="btnAñadirReclamacion" class="btn btn-info" disabled="disabled">Añadir</button>
-						<button type="button" id="btnNuevaMulta" name="btnNuevaMulta" class="btn btn-info">Multa</button>
-						<button type="button" id="btnGenerarFactura" name="btnGenerarFactura" class="btn btn-info">Factura</button>
+			</div>
 
-					</div>
+			<div class="form-group">
+
+				<label class="col-md-4 control-label">Multa</label>
+
+				<div class="col-md-4">
+
+					<input id="txtMulta" name="txtMulta" type="text" placeholder="Multa" class="form-control input-md" readonly="readonly">
+
 				</div>
+
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<button type="button" id="btnAñadirReclamacion" name="btnAñadirReclamacion" class="btn btn-info" disabled="disabled">Añadir</button>
+					<button type="button" id="btnNuevaMulta" name="btnNuevaMulta" class="btn btn-info">Multa</button>
+					<button type="button" id="btnGenerarFactura" name="btnGenerarFactura" class="btn btn-info">Factura</button>
+
+				</div>
+			</div>
 
 		</form>
 
 	</div>
 
+	<div id="formularios"></div>
+	<div id="mesajes">
+		<p id="txt"></p>
+	</div>
+<div title="Historial Cliente" id="hCliente"></div>
+<div title="Historial Abogado" id="hAbogado"></div>
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="js/altaCliente.js"></script>
+<script type="text/javascript" src="js/modCliente.js"></script>
+<script type="text/javascript" src="js/historialCliente.js"></script>
+<script type="text/javascript" src="js/altaAbagado.js"></script>
+<script type="text/javascript" src="js/modAbogado.js"></script>
+<script type="text/javascript" src="js/historialAbogado.js"></script>
+<script type="text/javascript" src="js/multa.js"></script>
+
 <script type="text/javascript">
 
 
@@ -432,7 +378,23 @@
 
 		close: resetearCampos()
 	});
+	oDlgHistorialCliente = $( "#hCliente" ).dialog({
+		autoOpen: false,
+		height: 600,
+		width: 700,
+		show:{
+			effect:"blind",
+			duration:"2000"
+		},
+		hide:{
+			effect:"blind",
+			duration:"2000"
+		},
+		modal: false,
 
+		close: resetearCampos()
+	});
+	$("#mnuHistorialCliente").click(function(){ oDlgHistorialCliente.dialog("open"); });
 	$("#mnuNuevoCliente").click(function(){ oDlgAltaCliente.dialog("open"); });
 
 	$("#chbClienteMiembro").click(mostrarCampoCM);
@@ -453,48 +415,13 @@
 		buttonText: "Select date"
 	});
 
-	oDlgBajaCliente = $( "#cpBajaCliente" ).dialog({
-		autoOpen: false,
-		height: 250,
-		width: 500,
-		modal: false,
-		show:{
-			effect:"clip",
-			duration:"2000"
-		},
-		hide:{
-			effect:"clip",
-			duration:"2000"
-		},
-		close: resetearCampos()
-	});
-	$("#mnuBajaCliente").click(function(){ oDlgBajaCliente.dialog("open"); });
-
-	oDlgModificarCliente = $( "#cpModificarCliente" ).dialog({
-		autoOpen: false,
-		height: 250,
-		width: 500,
-		modal: false,
-		show:{
-			effect:"drop",
-			duration:"2000"
-		},
-		hide:{
-			effect:"drop",
-			duration:"2000"
-		},
 
 
-		close: resetearCampos()
-	});
-
-	$("#mnuModificaCliente").click(function(){ oDlgModificarCliente.dialog("open"); });
-
-	$("#btnModificarCliente").click(function () {oDlgClienteMod.dialog("open");});
+	$("#mnuModificaCliente").click(function () {oDlgClienteMod.dialog("open");});
 
 	oDlgClienteMod = $("#cpClienteModificado").dialog({
 		autoOpen: false,
-		height: 620,
+		height: 350,
 		width: 700,
 		modal: false,
 		show:{
@@ -580,23 +507,108 @@
 		close: resetearCampos()
 	});
 	$("#mnuNuevaReclamacion").click(function(){oDlgNuevaRelcamacion.dialog("open"); });
-	
-	$("#btnAñadirMulta").click(abrirDialogoMulta);
-	
-	function abrirDialogoMulta() {
-		
-	}
+
+	$('#btnNuevaMulta').click(function(){
+
+		$( "#formularios" ).load("html/multa.html #cpMulta",function(){
+			$( "#cpMulta" ).dialog({
+				autoOpen: false,
+				height: 700,
+				width: 700,
+				show: {
+					effect: "drop",
+					duration: "2000"
+				},
+				hide: {
+					effect: "drop",
+					duration: "2000"
+				},
+				modal: false,
+
+				close: function() {
+					$("#frmAgregarMulta")[0].reset();
+				}
+
+			});
+			$( "#fechaMulta" ).datepicker({
+				showOn: "button",
+				buttonImage: "images/calendario.jpg",
+				buttonImageOnly: true,
+				buttonText: "Select date"
+			});
+			$("#cpMulta").dialog("open");
+
+		});
+
+	});
+
+	$('#btnGenerarFactura').click(function(){
+		$( "#formularios" ).load("html/factura.html #cpFactura",function(){
+			$( "#cpFactura" ).dialog({
+				autoOpen: false,
+				height: 700,
+				width: 700,
+				show: {
+					effect: "size",
+					duration: "2000"
+				},
+				hide: {
+					effect: "size",
+					duration: "2000"
+				},
+				modal: false,
+
+				close: function() {
+					$("#frmagregarfactura")[0].reset();
+				}
+
+			});
+			$( "#fechaFactura" ).datepicker({
+				showOn: "button",
+				buttonImage: "images/calendario.jpg",
+				buttonImageOnly: true,
+				buttonText: "Select date"
+			});
+			$("#cpFactura").dialog("open");
+
+		});
+
+	});
+
+	$('#mnuSeguimineto').click(function(){
+		if($("#frmSeguimiento").size()==0){
+			$( "#formularios" ).load("html/seguimiento.html",function() {
+				$.getScript("js/seguimiento.js")
+			});
+		}else{
+			$("#cpSeguimiento").dialog("open");
+		}
+
+		});
+
+
+	$("#mesajes").dialog({
+		autoOpen: false,
+		modal: true,
+		buttons: [{
+			text: "Aceptar",
+			click: function () {
+				$(this).dialog("close");
+			}
+		}]
+	});
+
 
 	function resetearCampos() {
 
-		document.frmBajaCliente.reset();
+
 		document.frmAñadirCliente.reset();
 		document.frmClienteM.reset();
-		document.frmClienteModificar.reset();
 		document.frmAgregarAbogado.reset();
-		document.frmAboBaja.reset();
+
 
 	}
+
 
 
 </script>
